@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komal | Web Developer Portfolio</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --accent: #a855f7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+.a1{
+    height:400px;
+    width:400px;
+    border-radius:100px;
+
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        /* Sections General */
+        section {
+            padding: 7rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Home Section */
+        #home {
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .home-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .home-text h3 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .home-text h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+            line-height: 1.1;
+        }
+
+        .home-text h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .home-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 4px 20px var(--primary-glow);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px var(--primary-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .home-img-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card-glow {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 50px var(--primary-glow);
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+
+        .profile-card-glow i {
+            font-size: 8rem;
+            color: white;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+            100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .skill-card i {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Projects & Mini Apps Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .project-header h3 {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .project-header h3 i {
+            color: var(--primary);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Mini Project Styles */
+        /* 1. Calculator */
+        .calc-screen {
+            background: #000;
+            color: #00ffcc;
+            font-family: monospace;
+            font-size: 1.5rem;
+            padding: 0.8rem 1rem;
+            text-align: right;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .calc-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+        .calc-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .calc-btn:hover { background: var(--primary); color: #fff; }
+        .calc-btn.op { color: var(--accent); }
+
+        /* 2. Tic-Tac-Toe */
+        /* .ttt-status {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .ttt-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-width: 220px;
+            margin: 0 auto 1rem;
+        }
+        .ttt-cell {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .ttt-cell:hover { background: rgba(99, 102, 241, 0.2); }
+        .ttt-reset {
+            display: block;
+            margin: 0 auto;
+            padding: 0.4rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        .ttt-reset:hover { border-color: var(--primary); color: var(--primary); } */
+
+        /* 3. Expense Tracker */
+        .expense-balance {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .expense-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+        .expense-form input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            outline: none;
+        }
+        .expense-form input:focus { border-color: var(--primary); }
+        .expense-list {
+            max-height: 110px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--primary);
+        }
+        .expense-item.expense { border-left-color: #ef4444; }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .contact-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media(max-width: 900px) {
+            .home-content, .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .home-text {
+                order: 2;
+            }
+            .home-img-wrapper {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .about-stats {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(11, 15, 25, 0.95);
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">Komal.dev</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <span class="badge">HDCA Student & Developer</span>
+                <h3>Hello, I'm</h3>
+                <h1>Komal <span>Verma</span></h1>
+                <p>Passionate Web Developer crafting clean, modern, and interactive user interfaces using HTML5, CSS3, and JavaScript. Transforming ideas into seamless digital web experiences.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Let's Talk</a>
+                </div>
+            </div>
+            <div class="home-img-wrapper">
+                <div class="profile-card-glow">
+                   <img  src="image1.jpeg"   class="a1">   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-grid">
+            <div class="about-img">
+                <div style="background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1)); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; text-align: center;">
+                    <i class="fa-solid fa-user-graduate" style="font-size: 5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">HDCA Scholar</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Honoured Diploma in Computer Applications</p>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>Hello! I am Komal, a dedicated front-end web developer currently enhancing my technical prowess through the professional <strong>HDCA (Higher Diploma in Computer Applications)</strong> course. I specialize in building responsive, efficient, and dynamic web applications from scratch.</p>
+                <p>My core stack revolves around modern HTML5, CSS3, and core JavaScript. I love building intuitive mini-applications that solve real-world problems or provide clean entertainment through code.</p>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>3+</h3>
+                        <p>Working Mini Apps Built</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Responsive Designs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML5</h3>
+                <p>Structuring modern web documents with semantic elements, accessibility best practices, and clean markup.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS3</h3>
+                <p>Crafting stunning layouts using Flexbox, CSS Grid, animations, variables, and responsive media queries.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Adding interactivity, managing state, handling events, and engineering dynamic UI logic with ES6+ syntax.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (With Working Mini-Projects) -->
+    <section id="projects">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1: Calculator -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3><i class="fa-solid fa-calculator"></i> Modern Calculator</h3>
+                </div>
+                <div class="project-body">
+                    <div class="calc-screen" id="calcScreen">0</div>
+                    <div class="calc-keys">
+                        <button class="calc-btn" onclick="calcClear()">C</button>
+                        <button class="calc-btn" onclick="calcAppend('/')">/</button>
+                        <button class="calc-btn" onclick="calcAppend('*')">*</button>
+                        <button class="calc-btn op" onclick="calcDelete()">⌫</button>
+                        <button class="calc-btn" onclick="calcAppend('7')">7</button>
+                        <button class="calc-btn" onclick="calcAppend('8')">8</button>
+                        <button class="calc-btn" onclick="calcAppend('9')">9</button>
+                        <button class="calc-btn" onclick="calcAppend('-')">-</button>
+                        <button class="calc-btn" onclick="calcAppend('4')">4</button>
+                        <button class="calc-btn" onclick="calcAppend('5')">5</button>
+                        <button class="calc-btn" onclick="calcAppend('6')">6</button>
+                        <button class="calc-btn" onclick="calcAppend('+')">+</button>
+                        <button class="calc-btn" onclick="calcAppend('1')">1</button>
+                        <button class="calc-btn" onclick="calcAppend('2')">2</button>
+                        <button class="calc-btn" onclick="calcAppend('3')">3</button>
+                        <button class="calc-btn op" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+                        <button class="calc-btn" onclick="calcAppend('0')" style="grid-column: span 2;">0</button>
+                        <button class="calc-btn" onclick="calcAppend('.')">.</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Tic-Tac-Toe -->
+            <!-- <div class="project-card">
+                <div class="project-header">
+                    <h3><i class="fa-solid fa-gamepad"></i> Tic-Tac-Toe Game</h3>
+                </div>
+                <div class="project-body">
+                    <div class="ttt-status" id="tttStatus">Player X's turn</div>
+                    <div class="ttt-board" id="tttBoard">
+                        <div class="ttt-cell" onclick="tttCellClick(0)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(1)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(2)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(3)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(4)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(5)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(6)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(7)"></div>
+                        <div class="ttt-cell" onclick="tttCellClick(8)"></div>
+                    </div>
+                    <button class="ttt-reset" onclick="tttReset()">Restart Game</button>
+                </div>
+            </div> -->
+
+            <!-- Project 3: Expense Tracker -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3><i class="fa-solid fa-wallet"></i> Expense Tracker</h3>
+                </div>
+                <div class="project-body">
+                    <div class="expense-balance">
+                        <span>Balance: <strong id="expBalance">₹0</strong></span>
+                        <span>Spent: <strong id="expTotal" style="color:#ef4444;">₹0</strong></span>
+                    </div>
+                    <form class="expense-form" id="expenseForm" onsubmit="addExpense(event)">
+                        <input type="text" id="expDesc" placeholder="Expense description" required>
+                        <input type="number" id="expAmount" placeholder="Amount (₹)" required>
+                        <button type="submit" class="btn btn-primary" style="padding: 0.5rem; font-size: 0.85rem;">Add Expense</button>
+                    </form>
+                    <div class="expense-list" id="expenseList">
+                        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem;" id="noExpText">No expenses added yet.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-user"></i>
+                    <div>
+                        <h4>Name</h4>
+                        <p>Komal</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div>
+                        <h4>Course</h4>
+                        <p>HDCA (Diploma in Computer Applications)</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>komal@webdeveloper.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Available Worldwide</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Komal. All rights reserved. Built with HTML, CSS & JavaScript.</p>
+    </footer>
+
+    <!-- JavaScript functionality -->
+    <!-- <script>
+        /* Mobile Menu Toggle */
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+
+        /* 1. Calculator Logic */
+        let calcInput = '0';
+        const calcScreen = document.getElementById('calcScreen');
+
+        function updateCalcScreen() {
+            calcScreen.textContent = calcInput;
+        }
+
+        function calcAppend(val) {
+            if (calcInput === '0' && val !== '.') {
+                calcInput = val;
+            } else {
+                calcInput += val;
+            }
+            updateCalcScreen();
+        }
+
+        function calcClear() {
+            calcInput = '0';
+            updateCalcScreen();
+        }
+
+        function calcDelete() {
+            calcInput = calcInput.length > 1 ? calcInput.slice(0, -1) : '0';
+            updateCalcScreen();
+        }
+
+        function calcCalculate() {
+            try {
+                calcInput = eval(calcInput).toString();
+            } catch (error) {
+                calcInput = 'Error';
+            }
+            updateCalcScreen();
+        }
+
+        /* 2. Tic-Tac-Toe Logic */
+        let tttBoardState = ['', '', '', '', '', '', '', '', ''];
+        let tttCurrentPlayer = 'X';
+        let tttActive = true;
+        const tttStatus = document.getElementById('tttStatus');
+        const winningConditions = [
+            [0,1,2], [3,4,5], [6,7,8],
+            [0,3,6], [1,4,7], [2,5,8],
+            [0,4,8], [2,4,6]
+        ];
+
+        function tttCellClick(index) {
+            if (tttBoardState[index] !== '' || !tttActive) return;
+            tttBoardState[index] = tttCurrentPlayer;
+            document.getElementsByClassName('ttt-cell')[index].textContent = tttCurrentPlayer;
+            
+            let roundWon = false;
+            for (let i = 0; i < winningConditions.length; i++) {
+                let [a, b, c] = winningConditions[i];
+                if (tttBoardState[a] && tttBoardState[a] === tttBoardState[b] && tttBoardState[a] === tttBoardState[c]) {
+                    roundWon = true;
+                    break;
+                }
+            }
+
+            if (roundWon) {
+                tttStatus.textContent = `Player ${tttCurrentPlayer} Wins! 🎉`;
+                tttActive = false;
+                return;
+            }
+
+            if (!tttBoardState.includes('')) {
+                tttStatus.textContent = `Game Ended in a Draw!`;
+                tttActive = false;
+                return;
+            }
+
+            tttCurrentPlayer = tttCurrentPlayer === 'X' ? 'O' : 'X';
+            tttStatus.textContent = `Player ${tttCurrentPlayer}'s turn`;
+        }
+
+        function tttReset() {
+            tttBoardState = ['', '', '', '', '', '', '', '', ''];
+            tttCurrentPlayer = 'X';
+            tttActive = true;
+            tttStatus.textContent = `Player X's turn`;
+            Array.from(document.getElementsByClassName('ttt-cell')).forEach(cell => cell.textContent = '');
+        }
+
+        /* 3. Expense Tracker Logic */
+        let expenses = [];
+        function addExpense(e) {
+            e.preventDefault();
+            const desc = document.getElementById('expDesc').value;
+            const amount = parseFloat(document.getElementById('expAmount').value);
+            
+            expenses.push({ desc, amount });
+            document.getElementById('expDesc').value = '';
+            document.getElementById('expAmount').value = '';
+            updateExpenseUI();
+        }
+
+        function updateExpenseUI() {
+            const list = document.getElementById('expenseList');
+            const totalEl = document.getElementById('expTotal');
+            const balanceEl = document.getElementById('expBalance');
+            const noExpText = document.getElementById('noExpText');
+
+            list.innerHTML = '';
+            if (expenses.length === 0)ggg -->
+
+
+            
+<script>
+/* Mobile Menu Toggle */
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+
+/* =================================
+   1. MODERN CALCULATOR
+================================= */
+
+let calcInput = '0';
+const calcScreen = document.getElementById('calcScreen');
+
+function updateCalcScreen() {
+    calcScreen.textContent = calcInput;
+}
+
+function calcAppend(val) {
+
+    if (calcInput === 'Error') {
+        calcInput = '0';
+    }
+
+    const operators = ['+', '-', '*', '/'];
+
+    if (operators.includes(val)) {
+        if (calcInput === '0' && val !== '-') return;
+
+        if (operators.includes(calcInput.slice(-1))) {
+            calcInput = calcInput.slice(0, -1);
+        }
+
+        calcInput += val;
+    } else if (val === '.') {
+        const currentNumber = calcInput.split(/[+\-*/]/).pop();
+
+        if (!currentNumber.includes('.')) {
+            calcInput += '.';
+        }
+    } else {
+        if (calcInput === '0') {
+            calcInput = val;
+        } else {
+            calcInput += val;
+        }
+    }
+
+    updateCalcScreen();
+}
+
+function calcClear() {
+    calcInput = '0';
+    updateCalcScreen();
+}
+
+function calcDelete() {
+    if (calcInput === 'Error' || calcInput.length <= 1) {
+        calcInput = '0';
+    } else {
+        calcInput = calcInput.slice(0, -1);
+    }
+
+    updateCalcScreen();
+}
+
+// Safe arithmetic expression evaluator
+function calculateExpression(expression) {
+    const tokens = expression.match(/\d*\.?\d+|[+\-*/]/g);
+
+    if (!tokens || tokens.join('') !== expression) {
+        throw new Error('Invalid expression');
+    }
+
+    let position = 0;
+
+    function parseNumber() {
+        if (tokens[position] === '-') {
+            position++;
+            return -parseNumber();
+        }
+
+        if (tokens[position] === '+') {
+            position++;
+            return parseNumber();
+        }
+
+        const number = Number(tokens[position++]);
+
+        if (!Number.isFinite(number)) {
+            throw new Error('Invalid number');
+        }
+
+        return number;
+    }
+
+    function parseTerm() {
+        let result = parseNumber();
+
+        while (
+            tokens[position] === '*' ||
+            tokens[position] === '/'
+        ) {
+            const operator = tokens[position++];
+            const next = parseNumber();
+
+            if (operator === '*') {
+                result *= next;
+            } else {
+                if (next === 0) {
+                    throw new Error('Division by zero');
+                }
+                result /= next;
+            }
+        }
+
+        return result;
+    }
+
+    function parseExpression() {
+        let result = parseTerm();
+
+        while (
+            tokens[position] === '+' ||
+            tokens[position] === '-'
+        ) {
+            const operator = tokens[position++];
+            const next = parseTerm();
+
+            if (operator === '+') {
+                result += next;
+            } else {
+                result -= next;
+            }
+        }
+
+        return result;
+    }
+
+    const result = parseExpression();
+
+    if (position !== tokens.length || !Number.isFinite(result)) {
+        throw new Error('Invalid expression');
+    }
+
+    return result;
+}
+
+function calcCalculate() {
+    try {
+        const result = calculateExpression(calcInput);
+
+        calcInput = String(
+            Number(result.toFixed(10))
+        );
+
+    } catch (error) {
+        calcInput = 'Error';
+    }
+
+    updateCalcScreen();
+}
+
+
+/* =================================
+   2. TIC TAC TOE GAME
+================================= */
+
+// let tttBoardState = [
+//     '', '', '',
+//     '', '', '',
+//     '', '', ''
+// ];
+
+// let tttCurrentPlayer = 'X';
+// let tttActive = true;
+
+// const tttStatus = document.getElementById('tttStatus');
+// const tttCells = document.querySelectorAll('.ttt-cell');
+
+// const winningConditions = [
+//     [0, 1, 2],
+//     [3, 4, 5],
+//     [6, 7, 8],
+//     [0, 3, 6],
+//     [1, 4, 7],
+//     [2, 5, 8],
+//     [0, 4, 8],
+//     [2, 4, 6]
+// ];
+
+// function tttCellClick(index) {
+
+//     if (
+//         tttBoardState[index] !== '' ||
+//         !tttActive
+//     ) {
+//         return;
+//     }
+
+//     // Add player's symbol
+//     tttBoardState[index] = tttCurrentPlayer;
+//     tttCells[index].textContent = tttCurrentPlayer;
+
+//     // Check winning conditions
+//     const roundWon = winningConditions.some(condition => {
+//         const [a, b, c] = condition;
+
+//         return (
+//             tttBoardState[a] !== '' &&
+//             tttBoardState[a] === tttBoardState[b] &&
+//             tttBoardState[a] === tttBoardState[c]
+//         );
+//     });
+
+//     if (roundWon) {
+//         tttStatus.textContent =
+//             `Player ${tttCurrentPlayer} Wins! 🎉`;
+
+//         tttActive = false;
+//         return;
+//     }
+
+//     // Check draw
+//     if (!tttBoardState.includes('')) {
+//         tttStatus.textContent = 'Game Ended in a Draw!';
+//         tttActive = false;
+//         return;
+//     }
+
+//     // Change player
+//     tttCurrentPlayer =
+//         tttCurrentPlayer === 'X' ? 'O' : 'X';
+
+//     tttStatus.textContent =
+//         `Player ${tttCurrentPlayer}'s turn`;
+// }
+
+// // Restart game
+// function tttReset() {
+
+//     tttBoardState = [
+//         '', '', '',
+//         '', '', '',
+//         '', '', ''
+//     ];
+
+//     tttCurrentPlayer = 'X';
+//     tttActive = true;
+
+//     tttStatus.textContent = "Player X's turn";
+
+//     tttCells.forEach(cell => {
+//         cell.textContent = '';
+//     });
+// }
+
+
+/* =================================
+   2. TIC TAC TOE GAME - FIXED
+================================= */
+
+let tttBoardState = ['', '', '', '', '', '', '', '', ''];
+
+let tttCurrentPlayer = 'X';
+let tttActive = true;
+
+const tttStatus = document.getElementById('tttStatus');
+const tttCells = document.querySelectorAll('.ttt-cell');
+
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+// Game cell click
+function tttCellClick(index) {
+
+    // Stop if game is finished or cell is occupied
+    if (!tttActive || tttBoardState[index] !== '') {
+        return;
+    }
+
+    // Place X or O
+    tttBoardState[index] = tttCurrentPlayer;
+
+    tttCells[index].textContent = tttCurrentPlayer;
+
+    // Check winner
+    let winner = false;
+
+    for (let condition of winningConditions) {
+
+        const [a, b, c] = condition;
+
+        if (
+            tttBoardState[a] !== '' &&
+            tttBoardState[a] === tttBoardState[b] &&
+            tttBoardState[b] === tttBoardState[c]
+        ) {
+            winner = true;
+            break;
+        }
+    }
+
+    // Winner found
+    if (winner) {
+
+        tttStatus.textContent =
+            '🎉 Player ' + tttCurrentPlayer + ' Wins!';
+
+        tttActive = false;
+        return;
+    }
+
+    // Check draw
+    if (!tttBoardState.includes('')) {
+
+        tttStatus.textContent = '🤝 Game Draw!';
+
+        tttActive = false;
+        return;
+    }
+
+    // Switch player
+    tttCurrentPlayer =
+        tttCurrentPlayer === 'X' ? 'O' : 'X';
+
+    tttStatus.textContent =
+        "Player " + tttCurrentPlayer + "'s turn";
+}
+
+
+// Restart game
+function tttReset() {
+
+    tttBoardState = ['', '', '', '', '', '', '', '', ''];
+
+    tttCurrentPlayer = 'X';
+
+    tttActive = true;
+
+    tttStatus.textContent = "Player X's turn";
+
+    // Clear all nine cells
+    tttCells.forEach(function(cell) {
+        cell.textContent = '';
+    });
+}
+
+/* =================================
+   3. EXPENSE TRACKER
+================================= */
+
+let expenses = [];
+
+function addExpense(e) {
+
+    e.preventDefault();
+
+    const descInput = document.getElementById('expDesc');
+    const amountInput = document.getElementById('expAmount');
+
+    const desc = descInput.value.trim();
+    const amount = Number(amountInput.value);
+
+    // Validate inputs
+    if (desc === '' || !Number.isFinite(amount) || amount <= 0) {
+        alert('Please enter a valid description and amount!');
+        return;
+    }
+
+    // Add expense
+    expenses.push({
+        id: Date.now() + Math.random(),
+        desc: desc,
+        amount: amount
+    });
+
+    // Clear inputs
+    descInput.value = '';
+    amountInput.value = '';
+
+    // Update display
+    updateExpenseUI();
+}
+
+function deleteExpense(id) {
+
+    expenses = expenses.filter(expense => expense.id !== id);
+
+    updateExpenseUI();
+}
+
+function updateExpenseUI() {
+
+    const list = document.getElementById('expenseList');
+    const totalEl = document.getElementById('expTotal');
+    const balanceEl = document.getElementById('expBalance');
+
+    // Calculate total spending
+    const total = expenses.reduce(
+        (sum, expense) => sum + expense.amount,
+        0
+    );
+
+    // Update total
+    totalEl.textContent = '₹' + total.toFixed(2);
+
+    // No starting income/budget is defined in the original HTML.
+    balanceEl.textContent = '₹0.00';
+
+    // Clear previous list
+    list.innerHTML = '';
+
+    // Empty expense message
+    if (expenses.length === 0) {
+
+        const message = document.createElement('p');
+
+        message.textContent = 'No expenses added yet.';
+        message.style.textAlign = 'center';
+        message.style.color = 'var(--text-muted)';
+        message.style.fontSize = '0.8rem';
+
+        list.appendChild(message);
+
+        return;
+    }
+
+    // Display expenses
+    expenses.forEach(expense => {
+
+        const item = document.createElement('div');
+        item.className = 'expense-item expense';
+
+        const description = document.createElement('span');
+        description.textContent = expense.desc;
+
+        const details = document.createElement('span');
+        details.style.display = 'flex';
+        details.style.gap = '10px';
+        details.style.alignItems = 'center';
+
+        const amount = document.createElement('strong');
+        amount.textContent = '-₹' + expense.amount.toFixed(2);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '✕';
+        deleteBtn.type = 'button';
+        deleteBtn.style.background = 'transparent';
+        deleteBtn.style.border = 'none';
+        deleteBtn.style.color = '#ef4444';
+        deleteBtn.style.cursor = 'pointer';
+
+        deleteBtn.addEventListener('click', () => {
+            deleteExpense(expense.id);
+        });
+
+        details.appendChild(amount);
+        details.appendChild(deleteBtn);
+
+        item.appendChild(description);
+        item.appendChild(details);
+
+        list.appendChild(item);
+    });
+}
+
+
+/* =================================
+   4. CONTACT FORM
+================================= */
+
+function handleContact(e) {
+
+    e.preventDefault();
+
+    alert('Thank you! Your message has been received.');
+
+    e.target.reset();
+}
+
+
+/* INITIALIZE PROJECTS */
+
+updateCalcScreen();
+updateExpenseUI();
+
+</script>
